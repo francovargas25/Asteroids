@@ -8,17 +8,16 @@ function gameOver(){
 }
 
 function update(){
-    //generateAsteroidotes();
+    
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     board.draw();
-
-    //asteroid1.newPos();
-
-    asteroid2.draw();
-    asteroid3.draw();
     spaceship.draw();
-    asteroid1.draw();
     drawShoots();
-    //drawAsteroidotes();
+    generateAsteroides();
+    frames++;
+    drawAsteroides();
+    checkCollition();
+    checkCollition2();
  }
 
  function start(){
@@ -37,3 +36,22 @@ function update(){
     intervalo = 0;
  }
 
+ function checkCollition(){
+     arrAsteroides.forEach(function(asteroide,aindex){
+         if(spaceship.isTouching(asteroide)){
+             gameOver();
+             arrAsteroides.splice(aindex,1);
+         }   
+         }
+     );
+     }
+
+     function checkCollition2(){
+        arrAsteroides.forEach(function(asteroide,aindex){
+            if(shoot.isTouching(asteroide)){
+                gameOver(); 
+                arrAsteroides.splice(bindex,1);
+            }   
+            }
+        );
+        }

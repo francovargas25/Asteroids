@@ -22,7 +22,7 @@ function Board(){
 //SPACESHIP 
     function Spaceship(){
         this.x = 550;
-        this.y= 450;
+        this.y= 650;
         this.width = 100;
         this.height= 100;
         this.speed = 20;
@@ -49,11 +49,11 @@ function Board(){
     this.moveRight = function(){
         this.x+=30;
     }
-    this.isTouching = function(asteroid1){ 
-        return (this.x < asteroid1.x + asteroid1.width)&&
-                (this.x + this.width > asteroid1.x) &&
-                (this.y < asteroid1.y + asteroid1.height) &&
-                (this.y + this.height > asteroid1.y);
+    this.isTouching = function(Asteroides){ 
+        return (this.x < Asteroides.x + Asteroides.width)&&
+                (this.x + this.width > Asteroides.x) &&
+                (this.y < Asteroides.y + Asteroides.height) &&
+                (this.y + this.height > Asteroides.y);
 
    
         } 
@@ -77,104 +77,29 @@ function Shoot(x,y){
         this.y -= 10
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
     }
-            
+    this.isTouching = function(Asteroides){ 
+        return (this.x < Asteroides.x + Asteroides.width)&&
+                (this.x + this.width > Asteroides.x) &&
+                (this.y < Asteroides.y + Asteroides.height) &&
+                (this.y + this.height > Asteroides.y);
     
 } 
+}
 
 //END OF SHOOT CLASS
 
-//asteroid 1 class
-function Asteroid1 (x,y) {
+//asteroides
+   function Asteroides(x,y,width,image){
     this.x = x;
-    this.y = y; 
-    this.width = 70;
-    this.height = 70;
-    this.angle = Math.PI / 360;
-    this.speed = 50;
-    this.img = new Image;
-    this.img.src = "assets/asteroid1.png";
-    this.speed = 1;
-
-    this.img.onload = function(){
-        this.draw();
-    }.bind(this);
+    this.y = y;
+    this.height = 50;
+    this.width = width;
+    this.direction = 0;
+    this.img = new Image();
+    this.img.src = image;
     this.draw = function(){
-        ctx.fillStyle = "white";
-        ctx.save();
-        ctx.rotate(this.speed*this.angle);
-        ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
-        //ctx.fillRect(this.x,this.y,this.width,this.height);
-        //ctx.translate(this,x,this.y);
-        ctx.restore()
-        this.speed += 1;
+        this.y++;
+        this.x+=5*this.direction
+        ctx.drawImage(this.img, this.x, this.y, this.width,this.height);
     }
-
-    this.update = function() {
-     
-    }
-    this.newPos = function() {
-        this.angle += 1 * Math.PI / 180;
-        this.x += this.speed * Math.sin(this.angle);
-        this.y -= this.speed * Math.cos(this.angle);
-    }
-}
-
-//asteroid 2 class
-function Asteroid2 () {
-    this.x = 400;
-    this.y = 400; 
-    this.width = 90;
-    this.height = 90;
-    this.angle = 0;
-    this.speed = 3;
-    this.img = new Image;
-    this.img.src = "assets/Asteroid2.png";
-
-    this.img.onload = function(){
-        this.draw();
-    }.bind(this);
-    this.draw = function(){
-        ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
-    }
-
-    this.update = function() {
-        ctx.save();
-        ctx.translate(this.x, this.y); 
-        ctx.rotate(this.angle);
-        ctx.restore(); 
-    }
-    this.newPos = function() {
-        this.x += this.speed * Math.sin(this.angle);
-        this.y -= this.speed * Math.cos(this.angle);
-    }
-}
-
-//asteroid 3 class
-function Asteroid3 () {
-    this.x = 700;
-    this.y = 200; 
-    this.width = 110;
-    this.height = 110;
-    this.angle = 0;
-    this.speed = 4;
-    this.img = new Image;
-    this.img.src = "assets/asteroid3.png";
-
-    this.img.onload = function(){
-        this.draw();
-    }.bind(this);
-    this.draw = function(){
-        ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
-    }
-
-    this.update = function() {
-        ctx.save();
-        ctx.translate(this.x, this.y); 
-        ctx.rotate(this.angle);
-        ctx.restore(); 
-    }
-    this.newPos = function() {
-        this.x += this.speed * Math.sin(this.angle);
-        this.y -= this.speed * Math.cos(this.angle);
-    }
-}
+   }
