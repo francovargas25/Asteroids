@@ -17,8 +17,8 @@ function Board(){
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
     };
     this.drawScore = function(){
-        ctx.font = "50px Sans-serif"
-        ctx.fillStyle = "purple"
+        ctx.font = "50px space_theme"
+        ctx.fillStyle = "white"
         ctx.fillText("Destroyed:  " + score,50,100);
     }
 
@@ -50,16 +50,16 @@ function Board(){
 
     //movimiento de la nave, checar listeners
     this.moveUp = function(){
-        this.y-=30;
+        this.y-=40;
     }
     this.moveDown = function(){
-        this.y+=30;
+        this.y+=40;
     }
     this.moveLeft = function(){
-        this.x-=30;
+        this.x-=40;
     }
     this.moveRight = function(){
-        this.x+=30;
+        this.x+=40;
     }
 
     this.isTouching = function(Asteroides){ 
@@ -143,6 +143,32 @@ function Shoot(x,y){
 }
 
 //END OF SHOOT CLASS
+
+
+
+
+/*SHOOT2 CLASS__________
+function Shoot2(x,y){
+    this.x = x;
+    this.y = y;
+    this.width = 30;
+    this.height = 30;
+    this.img = new Image();
+    this.img.src = "assets/laser.png" 
+        this.img.onload = function(){
+            this.draw();
+            }.bind(this);
+        
+          
+
+    this.draw = function(){
+        this.y -= 10
+        ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
+    }
+    
+}
+
+//END OF SHOOT2 CLASS */
 
 //asteroides
    function Asteroides(x,y,width,image){

@@ -4,6 +4,9 @@ document.getElementById('startButton').addEventListener('click',function(){
 document.getElementById('pauseButton').addEventListener("click",function(){
     stop()
 });
+/*document.getElementById('startButton2').addEventListener('click',function(){
+    start2();
+}),*/
 
 
 
@@ -87,13 +90,21 @@ addEventListener('keydown',function(e){
 
 
 
-           //creación de disparos
+           //creación de disparos del spaceship
 addEventListener('keydown',function(e){
    if(e.keyCode === 32){
        generateShoots()
        event.preventDefault();
    }
 })
+        /*creacion de disparos del spaceship 2
+addEventListener('keydown',function(e){
+    if(e.keyCode === 90){
+        generateShoots()
+        event.preventDefault();
+    }
+})*/
+
 addEventListener('keydown',function(e){
     if(e.keyCode === 82){
         location.reload();

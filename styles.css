@@ -1,3 +1,12 @@
+@font-face{
+    font-family: "space_theme";
+    src: url("assets/space_theme/Space Theme.ttf");
+}
+
+*{
+    font-family: "space_theme";
+}
+
 
 body{
     height: 100%;
@@ -37,6 +46,7 @@ body{
     font-size: 20px;
     cursor: pointer;
     text-align: center;
+    margin-right: 1cm;
     text-decoration: none;
     outline: none;
     color: white;
@@ -51,6 +61,26 @@ body{
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
+
+#startButton2{
+    display: inline-block;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    margin-right: 1cm;
+    outline: none;
+    color: white;
+    background-color: #00BFFF;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #666;
+}
+#startButton2:hover {background-color: #8ce2ff}
+#startButton2:active {
+    background-color: #00BFFF;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
 
 
 .titulon{

@@ -1,10 +1,19 @@
 function gameOver(){
     stop();
-    ctx.font = "100px courier"
+    ctx.font = "80px space_theme"
     ctx.strokeStyle = "red"
     ctx.lineWidth = 8;
-    ctx.strokeText("You Are Dead", 100,210)
-    ctx.fillText("press R to start",50,300)
+    ctx.strokeText("Spaceship Colission", 100,230)
+    ctx.fillText("Press R to Reload",50,400)
+}
+
+function gameOver2(){
+    stop();
+    ctx.font = "100px space_theme"
+    ctx.strokeStyle = "orange"
+    ctx.lineWidth = 8;
+    ctx.strokeText("Earth Exploded", 170,230)
+    ctx.fillText("Press R to Reload",50,400)
 }
 
 function update(){
@@ -24,6 +33,25 @@ function update(){
     })
  }
 
+ /*function update2(){   //este update se genera si quieren jugar dos
+    
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    board.draw();
+    board.drawScore();
+    spaceship.draw();
+    spaceship2.draw();
+    drawShoots();
+    generateAsteroides();
+    frames+=2;
+    drawAsteroides();
+    checkCollition();
+    checkCollition2()
+    collitionToEarth();
+    arrAsteroides.forEach(function(asteroide,aindex){
+        
+    })
+ }*/
+
  function start(){
      board.music.play();
      if(intervalo > 0)return;
@@ -38,7 +66,7 @@ function update(){
     board.music.play();
     if(intervalo > 0)return;
     intervalo = setInterval(function(){
-       update();
+       update2();
    }, 1000/60);
    shoots = [];
    frames=0;
@@ -70,7 +98,7 @@ function update(){
 
 function collitionToEarth(){
     arrAsteroides.forEach(function(asteroide){
-        if(asteroide.y>canvas.height)gameOver();//el juego debe parar cuando un asteroide llegue abajo del canvas
+        if(asteroide.y>canvas.height)gameOver2();//el juego debe parar cuando un asteroide llegue abajo del canvas
     })
     
 }
