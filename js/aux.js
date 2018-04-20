@@ -28,11 +28,11 @@ function generateShoots(){
     shoots.push(shoot);
 }
 
-/*GENERAR DISPAROS LASER DEL SPACESHIP2
+//GENERAR DISPAROS LASER DEL SPACESHIP2
 function generateShoots2(){
     var shoot= new Shoot(spaceship2.x + 35, spaceship.y);
     shoots.push(shoot);
-}*/
+}
 
 
 
@@ -43,6 +43,3 @@ function drawShoots(){
 } 
 
 //gameover
-
-
-

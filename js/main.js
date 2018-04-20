@@ -33,7 +33,7 @@ function update(){
     })
  }
 
- /*function update2(){   //este update se genera si quieren jugar dos
+ function update2(){   //este update se genera si quieren jugar dos
     
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     board.draw();
@@ -42,7 +42,7 @@ function update(){
     spaceship2.draw();
     drawShoots();
     generateAsteroides();
-    frames+=2;
+    frames+=20;
     drawAsteroides();
     checkCollition();
     checkCollition2()
@@ -50,7 +50,7 @@ function update(){
     arrAsteroides.forEach(function(asteroide,aindex){
         
     })
- }*/
+ }
 
  function start(){
      board.music.play();
@@ -62,7 +62,7 @@ function update(){
     frames=0;
  }
 
- /*function start2(){ funcion para probar si salen dos jugadores
+ function start2(){ //funcion para probar si salen dos jugadores
     board.music.play();
     if(intervalo > 0)return;
     intervalo = setInterval(function(){
@@ -70,7 +70,7 @@ function update(){
    }, 1000/60);
    shoots = [];
    frames=0;
- }*/
+ }
 
  function stop(){
     board.music.pause();
@@ -94,7 +94,7 @@ function update(){
         })
          }
      );
-     }
+}
 
 function collitionToEarth(){
     arrAsteroides.forEach(function(asteroide){
@@ -103,12 +103,12 @@ function collitionToEarth(){
     
 }
 
-     /*function checkCollition2(){
-        arrAsteroides.forEach(function(asteroide,aindex){
-            if(spaceship2.isTouching(asteroide)){ //spaceship es un var en declarations de new Spaceship
-                gameOver();
-                arrAsteroides.splice(aindex,1);
-            }   
-            }
-        );
-     }*/ // colission nave del segundo jugador
+function checkCollition2(){
+    arrAsteroides.forEach(function(asteroide,aindex){
+        if(spaceship2.isTouching(asteroide)){ //spaceship es un var en declarations de new Spaceship
+             gameOver();
+            arrAsteroides.splice(aindex,1);
+        }   
+    }
+    );
+} // colission nave del segundo jugador

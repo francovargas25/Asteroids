@@ -72,7 +72,7 @@ function Board(){
         } 
     }//END OF SPACESHIP CLASS  __________________
 
-/*SPACESHIP2 
+//SPACESHIP2 
 function Spaceship2(){
     this.x = 550;
     this.y= 650;
@@ -117,8 +117,7 @@ this.isTouching = function(Asteroides){
 
 
     } 
-}//END OF SPACESHIP2
- CLASS  __________________*/
+}//END OF SPACESHIP2 CLASS  __________________
 
 
 //SHOOT CLASS__________
@@ -147,7 +146,7 @@ function Shoot(x,y){
 
 
 
-/*SHOOT2 CLASS__________
+//SHOOT2 CLASS__________
 function Shoot2(x,y){
     this.x = x;
     this.y = y;
