@@ -128,6 +128,8 @@ function Shoot(x,y){
     this.height = 30;
     this.img = new Image();
     this.img.src = "assets/laser.png" 
+    this.music = new Audio();
+    this.music.src = "assets/14489_1460037270.mp3";
         this.img.onload = function(){
             this.draw();
             }.bind(this);
@@ -154,6 +156,8 @@ function Shoot2(x,y){
     this.height = 30;
     this.img = new Image();
     this.img.src = "assets/laser.png" 
+    this.music = new Audio();
+    this.music.src = "assets/14489_1460037270.mp3";
         this.img.onload = function(){
             this.draw();
             }.bind(this);

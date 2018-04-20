@@ -39,6 +39,7 @@ function generateShoots2(){
 function drawShoots(){
     shoots.forEach(function(shoot){
         shoot.draw();
+        shoot.music.play();
     });
 } 
 
