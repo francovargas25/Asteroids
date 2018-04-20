@@ -1,32 +1,41 @@
 document.getElementById('startButton').addEventListener('click',function(){
     start();
-});
+}),
 document.getElementById('pauseButton').addEventListener("click",function(){
     stop()
 });
+
+
+
+
+
 
               //movimiento del spaceship
 addEventListener('keydown',function(e){
     if(e.keyCode === 39){
         spaceship.moveRight();
+        event.preventDefault();
         
     }
 })
 addEventListener('keydown',function(e){
    if(e.keyCode === 37){
        spaceship.moveLeft();
+       event.preventDefault();
        
    }
 })
 addEventListener('keydown',function(e){
    if(e.keyCode === 38){
        spaceship.moveUp();
+       event.preventDefault();
        
    }
 })
 addEventListener('keydown',function(e){
    if(e.keyCode === 40){
        spaceship.moveDown();
+       event.preventDefault();
        
    }
 })
@@ -34,10 +43,63 @@ addEventListener('keydown',function(e){
 
 
 
+
+
+
+
+
+
+  //movimiento del spaceship2
+addEventListener('keydown',function(e){
+    if(e.keyCode === 68){
+        spaceship2.moveRight();
+        event.preventDefault();
+        
+    }
+})
+addEventListener('keydown',function(e){
+   if(e.keyCode === 65){
+       spaceship2.moveLeft();
+       event.preventDefault();
+       
+   }
+})
+addEventListener('keydown',function(e){
+   if(e.keyCode === 87){
+       spaceship2.moveUp();
+       event.preventDefault();
+       
+   }
+})
+addEventListener('keydown',function(e){
+   if(e.keyCode === 83){
+       spaceship2.moveDown();
+       event.preventDefault();
+       
+   }
+})
+  //fin movimiento del Spaceship2
+
+
+
+
+
+
+
+
            //creación de disparos
 addEventListener('keydown',function(e){
    if(e.keyCode === 32){
        generateShoots()
+       event.preventDefault();
    }
 })
+addEventListener('keydown',function(e){
+    if(e.keyCode === 82){
+        location.reload();
+        event.preventDefault();
+    }
+ })
+
+
             //fin de la creacion de disparos

@@ -1,6 +1,4 @@
-{
-    overflow:hidden;
-}
+
 body{
     height: 100%;
     width: 100%;
@@ -11,7 +9,6 @@ body{
     display:flex;
     justify-content: center;
     height:40px;
-    overflow: visible;
 }
 
 #startButton{
@@ -19,14 +16,21 @@ body{
     font-size: 20px;
     cursor: pointer;
     text-align: center;
-    text-decoration: none;
+    margin-right: 1cm;
     outline: none;
     color: white;
-    background-color: rgb(36, 45, 124);
+    background-color: #00BFFF;
     border: none;
     border-radius: 15px;
-    box-shadow: 0 9px #999;
+    box-shadow: 0 9px #666;
 }
+#startButton:hover {background-color: #8ce2ff}
+#startButton:active {
+    background-color: #00BFFF;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
 
 #pauseButton{
     display: inline-block;
@@ -36,14 +40,22 @@ body{
     text-decoration: none;
     outline: none;
     color: white;
-    background-color: rgb(36, 45, 124);
+    background-color: #00BFFF;
     border: none;
     border-radius: 15px;
     box-shadow: 0 9px #999;
 }
+#pauseButton:hover {background-color: #8ce2ff}
+#pauseButton:active {
+    background-color: #00BFFF;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
 
 .titulon{
     display:flex;
+    animation-name: "flash";
     justify-content: center;
     height:100px;
     margin: 30px;

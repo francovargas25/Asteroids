@@ -1,8 +1,3 @@
-//crear funcion nde generate asteroids
-//var random x
-//var random y
-    //var image = asteroidotes(math.floor(math.random()*asteroidotes.lenght));
-//dentro de esta funcion se debe crear una funcion que pushee el objeto generado dentro del arreglo arrAsteroidotes
 
 //GENERAR ASTEROIDES
 function generateAsteroides() {
@@ -18,17 +13,22 @@ function generateAsteroides() {
 
 function drawAsteroides() {
     arrAsteroides.forEach(function(asteroide) {
-        if (frames%50 === 0){
+        if (frames%150 === 0){
             asteroide.direction = (Math.floor(Math.random()*3)-1)
         }
         asteroide.draw();
     });
 }// fin de generacion de asteroides
 
+
+
+//GENERAR DISPAROS LASER
 function generateShoots(){
     var shoot= new Shoot(spaceship.x + 35, spaceship.y);
     shoots.push(shoot);
 }
+
+
 
 function drawShoots(){
     shoots.forEach(function(shoot){
@@ -40,15 +40,3 @@ function drawShoots(){
 
 
 
-//validación de choque de la nave con asteroides
-function checkCollition(){
-    asteroides.forEach(function(asteroides){ //se crea un metopdo donde se evalua/toma pip
-        if(spaceship.isTouching(asteroides)) gameOver();
-    });
-}
-
-function checkCollition2(){
-    shoots.forEach(function(asteroides){ 
-        if(shoot.isTouching(asteroides)) gameOver();
-    });
-}
